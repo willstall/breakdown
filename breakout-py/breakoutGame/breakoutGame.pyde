@@ -20,7 +20,7 @@ paddleSize = 100
 paddle = Paddle(360, paddleSize)
 
 ballSize = 20
-ball = Ball(resX/2, resY/2, ballSize)
+ball = Ball(resX/2, resY/2, ballSize, resX, resY)
 
 def setup():
     size(resX, resY)
