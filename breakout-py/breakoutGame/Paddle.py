@@ -1,12 +1,12 @@
 class Paddle():
     
-    def __init__(self, yPosition):
+    def __init__(self, yPosition, sz):
         self.xPos = 320
         self.yPos = yPosition
         self.left = 0
         self.right = 0
         self.speed = 10.0
-        self.size = 100
+        self.size = sz
     
     def clamp(self, x, minValue, maxValue):
         if x < minValue:

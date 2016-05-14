@@ -1,15 +1,14 @@
-from Paddle import Paddle
 from Brick import Brick
-paddle = Paddle(360)
+from Paddle import Paddle
+from Ball import Ball
 
-brickList = []
-rowColorList = [color(255, 255, 0), 
-                color(0, 255, 0), 
-                color(255, 153, 0),
-                color(255, 0, 0)]
-
+# Resolution
 resX = 640
 resY = 360
+
+brickList = []
+rowColorList = [color(255, 255, 0), color(0, 255, 0), 
+                color(255, 153, 0), color(255, 0, 0)]
 spaceBetweenBricks = 0
 spaceFromTop = 0
 brickCount = 8
@@ -17,7 +16,11 @@ rowCount = 8
 brickWidth = (resX - (brickCount - 2) * spaceBetweenBricks) / brickCount
 brickHeight = 15
 
-# bricksPerRow = 5
+paddleSize = 100
+paddle = Paddle(360, paddleSize)
+
+ballSize = 20
+ball = Ball(resX/2, resY/2, ballSize)
 
 def setup():
     size(resX, resY)
@@ -28,6 +31,7 @@ def draw():
     background(0);
     paddle.display()
     drawBricks()
+    ball.display()
     
 def spawnBricks():
     println("Creating bricks")
