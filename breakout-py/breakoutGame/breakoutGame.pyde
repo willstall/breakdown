@@ -32,6 +32,7 @@ def draw():
     paddle.display()
     drawBricks()
     ball.display()
+    paddleBallCollision()
     
 def spawnBricks():
     println("Creating bricks")
@@ -51,6 +52,13 @@ def spawnBricks():
 def drawBricks():
     for x in range(0, len(brickList)):
         brickList[x].display()
+        
+def paddleBallCollision():
+        if ball.xPos + ball.size/4 > paddle.xPos and \
+        ball.xPos - ball.size/4 < paddle.xPos + paddle.size and \
+        ball.yPos + ball.size/2 < paddle.yPos + paddle.ySize and \
+        ball.yPos + ball.size/2 > paddle.yPos:
+            ball.speedY *= -1
     
 def keyPressed():
     if key == 'a':
