@@ -54,17 +54,24 @@ def drawBricks():
         brickList[x].display()
         
 def paddleBallCollision():
+    #top
         if ball.xPos + ball.size/4 > paddle.xPos and \
         ball.xPos - ball.size/4 < paddle.xPos + paddle.size and \
         ball.yPos + ball.size/2 < paddle.yPos + paddle.ySize and \
         ball.yPos + ball.size/2 > paddle.yPos:
             ball.speedY *= -1
-        
-        if ball.yPos + ball.size/4 > paddle.xPos and \
+   
+        if ball.yPos + ball.size/4 > paddle.yPos and \
         ball.yPos - ball.size/4 < paddle.yPos + paddle.ySize and \
         ball.xPos + ball.size/2 > paddle.xPos and \
         ball.xPos + ball.size/2 < paddle.xPos + paddle.size:
-            ball.speedX *= 1
+            ball.speedX *= -1
+
+        if ball.yPos + ball.size/4 > paddle.yPos and \
+        ball.yPos - ball.size/4 < paddle.yPos + paddle.ySize and \
+        ball.xPos - ball.size/2 < paddle.xPos + paddle.size and \
+        ball.xPos - ball.size/2 > ball.xPos:
+            ball.speedX *= -1
         
     
 def keyPressed():
