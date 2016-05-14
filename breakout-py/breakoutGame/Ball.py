@@ -20,14 +20,16 @@ class Ball():
     def checkWallCollision(self):
         if self.xPos < self.size/2:
            self.speedX *= -1
-        elif self.xPos > self.size/2:
-            pass
+        elif self.xPos > (self.resX - self.size/2):
+            self.speedX *= -1
+        if self.yPos < self.size/2:
+            self.speedY *= -1
     
     def display(self):
         self.checkWallCollision()
         rectMode(CENTER)
-        self.xPos -= self.speedX
-        # self.yPos -= self.speedY
+        # self.xPos += self.speedX
+        self.yPos -= self.speedY
         fill(255)
         ellipse(self.xPos, self.yPos,
                  self.size, self.size)
