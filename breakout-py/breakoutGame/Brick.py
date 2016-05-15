@@ -7,7 +7,21 @@ class Brick():
         self.brickColor = col
         pass
         
-    def display(self):
+    def display(self, b, bl):
         rectMode(CENTER)
         fill(self.brickColor)
         rect(self.brickX, self.brickY, self.brickWidth, self.brickHeight)
+        self.checkCollision(b, bl)
+        
+    def checkCollision(self, ball, brickList):
+        if ball.xPos > self.brickX - self.brickWidth and \
+        ball.xPos < self.brickX + self.brickWidth/2 and \
+        ball.yPos < self.brickY + self.brickHeight/2 and \
+        ball.yPos > self.brickY - self.brickHeight/2:
+            self.brickColor = color(0, 0, 0)
+               
+       # if ball.xPos < self.brickX - self.brickWidth/2 and \
+       # ball.xPos > self.brickX + self.brickWidth/2 and \
+       # ball.yPos < self.brickY - self.brickHeight/2 and \
+       # ball.yPos > self.brickY - self.brickHeight/2:
+       #     println("brick")
