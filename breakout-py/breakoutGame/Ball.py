@@ -1,13 +1,14 @@
 class Ball():
     
-    def __init__(self, xPos, yPos, sz, rX, rY):
+    def __init__(self, xPos, yPos, sz, sp, rX, rY):
         self.xPos = xPos
         self.yPos = yPos
         self.size = sz
-        self.speedX = 4
-        self.speedY = 4
+        self.speedX = sp
+        self.speedY = sp
         self.resX = rX
         self.resY = rY
+        self.startSpeed = sp
     
     def clamp(self, x, minValue, maxValue):
         if x < minValue:
@@ -29,8 +30,8 @@ class Ball():
         println("resetting ball")
         self.xPos = x
         self.yPos = y
-        self.speedX = 4
-        self.speedY = 4
+        self.speedX = self.startSpeed
+        self.speedY = self.startSpeed
         
     
     def display(self):

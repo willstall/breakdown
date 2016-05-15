@@ -20,9 +20,10 @@ paddleSize = 100
 paddle = Paddle(360, paddleSize)
 
 ballSize = 11
+ballSpeed = 2
 ballStartX = paddle.xPos
 ballStartY = paddle.yPos + paddle.ySize - ballSize
-ball = Ball(ballStartX, ballStartY, ballSize, resX, resY)
+ball = Ball(ballStartX, ballStartY, ballSize, ballSpeed, resX, resY)
 
 gameStarted = False
 
