@@ -25,6 +25,14 @@ class Ball():
         if self.yPos < self.size/2:
             self.speedY *= -1
     
+    def resetPosition(self, x, y):
+        println("resetting ball")
+        self.xPos = x
+        self.yPos = y
+        self.speedX = 3
+        self.speedY = 3
+        
+    
     def display(self):
         self.checkWallCollision()
         rectMode(CENTER)

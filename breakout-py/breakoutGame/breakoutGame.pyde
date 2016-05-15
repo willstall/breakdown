@@ -20,7 +20,9 @@ paddleSize = 100
 paddle = Paddle(360, paddleSize)
 
 ballSize = 20
-ball = Ball(resX/2, resY/2, ballSize, resX, resY)
+ballStartX = paddle.xPos
+ballStartY = paddle.yPos + paddle.ySize - ballSize
+ball = Ball(ballStartX, ballStartY, ballSize, resX, resY)
 
 def setup():
     size(resX, resY)
@@ -33,6 +35,7 @@ def draw():
     drawBricks()
     ball.display()
     paddleBallCollision()
+    checkForRespawn()
     
 def spawnBricks():
     println("Creating bricks")
@@ -66,6 +69,10 @@ def paddleBallCollision():
                 ball.speedX = abs(ball.speedX)
             else:
                 pass
+                
+def checkForRespawn():
+    if (ball.yPos - ball.size) - 5 > resY:
+        ball.resetPosition(ballStartX, ballStartY)
     
 def keyPressed():
     if key == 'a':
