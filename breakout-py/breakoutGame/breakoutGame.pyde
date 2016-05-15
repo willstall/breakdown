@@ -20,10 +20,10 @@ paddleSize = 100
 paddle = Paddle(360, paddleSize)
 
 ballSize = 11
-ballSpeed = 2
+ballSpeed = 3
 ballStartX = paddle.xPos
-# ballStartY = paddle.yPos + paddle.ySize - ballSize
-ballStartY = 5
+ballStartY = paddle.yPos - paddle.ySize - ballSize/4
+# ballStartY = 5
 ball = Ball(ballStartX, ballStartY, ballSize, ballSpeed, resX, resY)
 
 gameStarted = False
@@ -83,9 +83,21 @@ def keyPressed():
         paddle.left = 1
     if key == 'd':
         paddle.right = 1
+    
+    if key == CODED:
+        if keyCode == LEFT:
+            paddle.left = 1
+        if keyCode == RIGHT:
+            paddle.right = 1
+        
 
 def keyReleased():
     if key == 'a':
         paddle.left = 0
     if key == 'd':
         paddle.right = 0
+    if key == CODED:
+        if keyCode == LEFT:
+            paddle.left = 0
+        if keyCode == RIGHT:
+            paddle.right = 0

@@ -24,7 +24,7 @@ class Brick():
            self.brickColor = color(0, 0, 0)
            ball.speedY *= -1
            self.brickActive = False
-           println("bottom")
+           # println("bottom")
         elif ball.xPos - ball.size/2 > self.brickX - self.brickWidth/2 and \
         ball.xPos + ball.size/2 < self.brickX + self.brickWidth/2 and \
         ball.yPos + ball.size/2 > self.brickY - self.brickHeight/2 and \
@@ -32,7 +32,7 @@ class Brick():
            self.brickColor = color(0, 0, 0)
            ball.speedY *= -1
            self.brickActive = False
-           println("top")
+           # println("top")
         elif ball.yPos - ball.size/2 > self.brickY - self.brickHeight/2 and \
         ball.yPos + ball.size/2 < self.brickY + self.brickHeight/2 and \
         ball.xPos + ball.size/2 > self.brickX - self.brickWidth/2 and \
@@ -40,7 +40,7 @@ class Brick():
             self.brickColor = color(0, 0, 0)
             ball.speedX *= -1
             self.brickActive = False
-            println("left")
+            # println("left")
         elif ball.yPos - ball.size/2 > self.brickY - self.brickHeight/2 and \
         ball.yPos + ball.size/2 < self.brickY + self.brickHeight/2 and \
         ball.xPos - ball.size/2 < self.brickX + self.brickWidth/2 and \
@@ -48,4 +48,4 @@ class Brick():
             self.brickColor = color(0, 0, 0)
             ball.speedX *= -1
             self.brickActive = False
-            println("right")
+            # println("right")
