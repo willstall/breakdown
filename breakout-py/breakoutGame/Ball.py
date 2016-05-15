@@ -4,8 +4,8 @@ class Ball():
         self.xPos = xPos
         self.yPos = yPos
         self.size = sz
-        self.speedX = 3
-        self.speedY = 3
+        self.speedX = 4
+        self.speedY = 4
         self.resX = rX
         self.resY = rY
     
@@ -29,8 +29,8 @@ class Ball():
         println("resetting ball")
         self.xPos = x
         self.yPos = y
-        self.speedX = 3
-        self.speedY = 3
+        self.speedX = 4
+        self.speedY = 4
         
     
     def display(self):
