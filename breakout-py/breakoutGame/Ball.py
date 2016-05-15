@@ -39,5 +39,5 @@ class Ball():
         self.xPos += self.speedX
         self.yPos -= self.speedY
         fill(255)
-        ellipse(self.xPos, self.yPos,
+        rect(self.xPos, self.yPos,
                  self.size, self.size)
