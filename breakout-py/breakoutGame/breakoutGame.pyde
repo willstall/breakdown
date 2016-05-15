@@ -19,7 +19,7 @@ brickHeight = 15
 paddleSize = 100
 paddle = Paddle(360, paddleSize)
 
-ballSize = 20
+ballSize = 11
 ballStartX = paddle.xPos
 ballStartY = paddle.yPos + paddle.ySize - ballSize
 ball = Ball(ballStartX, ballStartY, ballSize, resX, resY)
