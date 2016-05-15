@@ -5,6 +5,7 @@ class Brick():
         self.brickX = x + (self.brickWidth/2)
         self.brickY = y + (self.brickHeight/2);
         self.brickColor = col
+        self.brickActive = True
         pass
         
     def display(self, b, bl):
@@ -14,14 +15,16 @@ class Brick():
         self.checkCollision(b, bl)
         
     def checkCollision(self, ball, brickList):
-        if ball.xPos > self.brickX - self.brickWidth and \
-        ball.xPos < self.brickX + self.brickWidth/2 and \
-        ball.yPos < self.brickY + self.brickHeight/2 and \
-        ball.yPos > self.brickY - self.brickHeight/2:
+        # if ball.xPos > self.brickX - self.brickWidth/2 and \
+        # ball.xPos < self.brickX + self.brickWidth/2 and \
+        # ball.yPos < self.brickY + self.brickHeight/2 and \
+        # ball.yPos > self.brickY - self.brickHeight/2:
+        #     self.brickColor = color(0, 0, 0)
+            
+        #hit bottom
+        if ball.xPos - ball.size/2 > self.brickX - self.brickWidth/2 and \
+        ball.xPos + ball.size/2 < self.brickX + self.brickWidth/2 and \
+        ball.yPos - ball.size/2 < self.brickY + self.brickHeight/2:
             self.brickColor = color(0, 0, 0)
-               
-       # if ball.xPos < self.brickX - self.brickWidth/2 and \
-       # ball.xPos > self.brickX + self.brickWidth/2 and \
-       # ball.yPos < self.brickY - self.brickHeight/2 and \
-       # ball.yPos > self.brickY - self.brickHeight/2:
-       #     println("brick")
+            ball.speedY *= -1
+            brickActive = False
