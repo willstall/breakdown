@@ -60,7 +60,6 @@ def drawBricks():
         brickList[x].display(ball, brickList)
         
 def paddleBallCollision():
-    
         if ball.xPos + ball.size/2 > paddle.xPos - (paddle.size/2) and \
         ball.xPos - ball.size/2 < paddle.xPos + paddle.size/2 and \
         ball.yPos + ball.size/2 < paddle.yPos + paddle.ySize/2 and \
