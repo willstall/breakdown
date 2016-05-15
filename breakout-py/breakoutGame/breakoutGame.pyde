@@ -10,7 +10,7 @@ brickList = []
 rowColorList = [color(255, 255, 0), color(0, 255, 0), 
                 color(255, 153, 0), color(255, 0, 0)]
 spaceBetweenBricks = 0
-spaceFromTop = 0
+spaceFromTop = 50
 brickCount = 8
 rowCount = 8
 brickWidth = (resX - (brickCount - 2) * spaceBetweenBricks) / brickCount
@@ -22,7 +22,8 @@ paddle = Paddle(360, paddleSize)
 ballSize = 11
 ballSpeed = 2
 ballStartX = paddle.xPos
-ballStartY = paddle.yPos + paddle.ySize - ballSize
+# ballStartY = paddle.yPos + paddle.ySize - ballSize
+ballStartY = 5
 ball = Ball(ballStartX, ballStartY, ballSize, ballSpeed, resX, resY)
 
 gameStarted = False
