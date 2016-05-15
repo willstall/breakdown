@@ -24,6 +24,8 @@ ballStartX = paddle.xPos
 ballStartY = paddle.yPos + paddle.ySize - ballSize
 ball = Ball(ballStartX, ballStartY, ballSize, resX, resY)
 
+gameStarted = False
+
 def setup():
     size(resX, resY)
     noStroke()
@@ -51,10 +53,11 @@ def spawnBricks():
             rowColCount -= 1
             
     println(len(brickList))
+    gameStarted = True
         
 def drawBricks():
     for x in range(0, len(brickList)):
-        brickList[x].display()
+        brickList[x].display(ball, brickList)
         
 def paddleBallCollision():
     
